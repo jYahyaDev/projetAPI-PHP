@@ -1,0 +1,57 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.project-hero{
+    height: 80vh;
+    background-image: linear-gradient(
+      to right bottom,
+      rgba(137, 158, 134, 0.3),
+      rgba(51, 192, 145, 0.75)
+    ),
+    url('images/légumes.jpg');
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 70vh,
+    0 100%
+  ); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* .hero-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+ */
+
+.project-view{
+    height: 300px;
+    width: 350px;
+    background-color: green;
+    margin: 15px;
+
+}
+
+
+
+.project-result{
+
+   display: flex;
+   flex-wrap: wrap;
+
+
+}
+ 

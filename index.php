@@ -8,7 +8,8 @@
         $id = ucfirst($id); // Permet d'afficher la premiere lettre en majuscule
         $id = str_replace(' ', '+', $id);//Remplace l'espace vide par un "+"
         $url = "https://api.hmz.tf/?id=$id"; 
-        $api = file_get_contents($url);     
+        $api = file_get_contents($url); 
+        // Récupère une chaîne encodée JSON et la convertit en une variable PHP.     
         $json = json_decode($api,true);//true = tableau associatif 
         $array = $json['message']; // Récupere la partie du tableau avec tous les elements (sans le message de succes) 
       
@@ -17,6 +18,7 @@
 /***Affiche all ****/
 
     if(isset($_GET['items'])){
+          // Protection de la variable
         $all = htmlspecialchars($_GET['items']);
         $url = "https://api.hmz.tf/?id=$all"; 
         $api = file_get_contents($url) ;     
@@ -25,6 +27,8 @@
     
     }
     
+
+
 ?>
 
 <!DOCTYPE html>
@@ -32,16 +36,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aide-mémoire : Vapeur douce</title>
+    <!-- Création meta description
+    Balise importante pour le SEO -> descriptif de l'application court et pertinent-->
     <meta name="description" content="Cette application est une aide-mémoire. Elle vous permet d'accéder rapidement à des informations pratiques liées à cet étonnant mode de cuisson">
-    <!-- opengraph -->
+    
+    <!-- Création opengraph afin d'adapter la description du contenu aux réseaux sociaux (Facebook) -> Ajout d'une image permet de donner un aperçu du site-->
     <meta property="og:title" content="Aide-mémoire : Vapeur douce">
     <meta property="og:site_name" content="Aide-mémoire : Vapeur douce">
     <meta property="og:url" content="https://salindres-rugby.000webhostapp.com/">
     <meta property="og:description" content="Cette application est une aide-mémoire. Elle vous permet d'accéder rapidement à des informations pratiques liées à cet étonnant mode de cuisson.">
     <meta property="og:type" content="siteweb">
     <meta property="og:image" content="https://salindres-rugby.000webhostapp.com/images/légumes.jpg">
-    <!-- twittercard -->
-    <meta name="twitter:card" content="summary">
+    <!-- Mise en place d'une twittercard afin de favoriser la visibilitee et le partage sur Twitter -->
+    <meta name="twitter:card" content="summary"><!--summary permet d'afficher une vignette avec une image et un descriptif-->
     <meta name="twitter:site" content="https://salindres-rugby.000webhostapp.com/">
     <meta name="twitter:title" content="Aide-mémoire : Vapeur douce">
     <meta name="twitter:description" content="Cette application est une aide-mémoire. Elle vous permet d'accéder rapidement à des informations pratiques liées à cet étonnant mode de cuisson">
@@ -49,7 +57,6 @@
     
     <script src="https://kit.fontawesome.com/b3bd20c615.js" crossorigin="anonymous"></script>
     <link href="style.css" rel="stylesheet">
-    <title>Aide-mémoire : Vapeur douce</title>
 </head>
 
 
@@ -105,7 +112,7 @@
              // 1ere boucle permets de recuperer le titre de chaque tableau ( aliments)
             // 2ieme boucle permets de recuperer la clé et la valeur de chaque tableau inclus au sein du tableau principal
             foreach($array as $titleAliment=>$content){
-                // Création d'une div à chaque boucle affichage flexbox
+                // Création d'une div à chaque boucle ->affichage flexbox
                 echo 
                 "<div class='project-view'>
                     <h2>$titleAliment</h2>";
@@ -124,12 +131,11 @@
         }
         ?>
    
-
     </section>
 
 
-<footer>
-    <p>© 2020 LE J - Vapeur Douce</p>
-</footer>    
+
+
+
 </body>
 </html>

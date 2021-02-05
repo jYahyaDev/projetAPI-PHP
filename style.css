@@ -11,18 +11,18 @@ body {
   margin: 0;
   padding: 0;
   color: #393e46;
-
 }
 
 html {
   scroll-behavior: smooth;
- 
 }
 
 a {
   text-decoration: none;
   color: inherit;
 }
+
+/**HERO**/
 .project-hero {
   height: 90vh;
   background-image: linear-gradient(to right bottom, #393e46a4, #ffd269a8),
@@ -43,32 +43,7 @@ a {
   color: #eeeeee;
   margin-bottom: 20px;
   margin-top: 0;
-  animation: fadein 4s;
 }
-
-/* @keyframes fadein{
-
-    from{
-        opacity: 0;
-    }
-    to{
-        opacity: 1;
-    }
-}
-
-
-@keyframes up{
-
-    from{
-        transform: translateY(100px);
-        opacity: 0;
-    }
-    to{
-         transform: translateY(0);
-         opacity: 1;
-    }
-}
- */
 
 span {
   background-color: #ffd369;
@@ -80,7 +55,6 @@ span {
   padding-top: 20px;
   display: flex;
   width: 50%;
-  animation: up 3s;
 }
 
 form {
@@ -118,18 +92,19 @@ form {
   color: white;
 }
 
-.project-hero__angles--up{
+.project-hero__angles--up {
   color: #222831;
-  background-color:#ffd369 ;
+  background-color: #ffd369;
   padding: 15px;
   border-radius: 30%;
   position: fixed;
   bottom: 0px;
-  right:0;
+  right: 0;
   margin: 10px;
-
+  z-index: 1;
 }
 
+/**CONTENT**/
 
 h2 {
   text-align: center;
@@ -150,14 +125,36 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-
 }
 
+/*MEDIA QUERIEs*/
 
-footer{
-  height: 15vh;
-  background-color: #222831;
-  color:#ffd269c9;
-  position: absolute;
-  bottom: 0;
+@media screen and (max-width: 480px) {
+  .hero-content {
+    width: 100%;
+  }
+  .project-hero__input {
+    padding: 5px;
+    width: 100%;
+    border-radius: 15px;
+  }
+  .btn {
+    margin-top: 10px;
+  }
+  body {
+    font-size: 18px;
+  }
+  .project-hero {
+    height: 90vh;
+    background-image: linear-gradient(to right bottom, #393e46a4, #ffd269a8),
+      url('images/légumes-mobile.jpg');
+    background-size: cover;
+    background-position: top;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
 }

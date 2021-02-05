@@ -1,57 +1,73 @@
-*{
-    box-sizing: border-box;
+@font-face {
+  src: url(font/vapeur.otf);
+  font-family: vapeur;
 }
 
-body{
-    margin: 0;
-    padding: 0;
+* {
+  box-sizing: border-box;
 }
 
-.project-hero{
-    height: 80vh;
-    background-image: linear-gradient(
-      to right bottom,
-      rgba(137, 158, 134, 0.3),
-      rgba(51, 192, 145, 0.75)
-    ),
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.project-hero {
+  height: 100vh;
+  background-image: linear-gradient(to right bottom, #393e46a4, #ffd269a8),
     url('images/légumes.jpg');
   background-size: cover;
   background-position: top;
   position: relative;
-  clip-path: polygon(
-    0 0,
-    100% 0,
-    100% 70vh,
-    0 100%
-  ); 
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
-
-/* .hero-content{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
- */
-
-.project-view{
-    height: 300px;
-    width: 350px;
-    background-color: green;
-    margin: 15px;
-
+.project-hero__logo {
+  font-family: vapeur;
+  font-size: 80px;
+  color: #eeeeee;
+  margin-bottom: 20px;
 }
 
-
-
-.project-result{
-
-   display: flex;
-   flex-wrap: wrap;
-
-
+span {
+  background-color: #ffd369;
+  padding-top: 5px;
+  color: #393e46;
 }
- 
+
+.hero-content {
+  display: flex;
+  width: 50%;
+}
+form {
+  width: 100%;
+}
+.project-hero__input {
+  padding: 5px;
+  width: 70%;
+  border-radius: 15px;
+}
+
+.btn {
+  padding: 3px;
+  font-size: 18px;
+  border-radius: 10px;
+}
+
+.project-view {
+  height: 300px;
+  width: 350px;
+  background-color: green;
+  margin: 15px;
+  text-align: center;
+}
+
+.project-result {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

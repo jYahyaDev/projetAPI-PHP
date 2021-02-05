@@ -2,21 +2,27 @@
 <?php
 //Traitement du formulaire : 
 
-if(isset($_GET['aliment']) && !empty($_GET['aliment'])){
-    // Protection de la variable
-    $id = htmlspecialchars($_GET['aliment']);
-    $id = ucfirst($id);
-    echo $id;
-    $url = "https://api.hmz.tf/?id=$id"; // l'espace dans le input n'ajoute pas de "+" => requete fausse 
-    echo $url;
-    $api = file_get_contents($url) ;     
-    $json = json_decode($api);
-    echo "<pre>";
-    print_r($json);
+      // 1ere boucle permets de recuperer le titre de chaque tableau ( aliments)
+            // 2ieme boucle permets de recuperer la clé et la valeur de chaque tableau inclus au sein du tableau principal
+            foreach($array as $titleAliment=>$content){
+                // Création d'une div à chaque boucle
+                echo 
+                "<div class='project-view'>
+                    <h2>$titleAliment</h2>";
+                  
+                foreach($content as $method=>$details){
+       
+                 echo "<p>$method : $details</p>";
+                }
+                
+                
+                
+                echo "</div>";
+            }
 
-}
+   
+   
 
- 
 
 
 

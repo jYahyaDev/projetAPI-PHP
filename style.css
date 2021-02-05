@@ -1,5 +1,5 @@
 @font-face {
-  src: url(font/vapeur.otf);
+  src: url(font/vapeur.woff);
   font-family: vapeur;
 }
 
@@ -10,10 +10,21 @@
 body {
   margin: 0;
   padding: 0;
+  color: #393e46;
+
 }
 
+html {
+  scroll-behavior: smooth;
+ 
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
 .project-hero {
-  height: 100vh;
+  height: 90vh;
   background-image: linear-gradient(to right bottom, #393e46a4, #ffd269a8),
     url('images/légumes.jpg');
   background-size: cover;
@@ -31,7 +42,33 @@ body {
   font-size: 80px;
   color: #eeeeee;
   margin-bottom: 20px;
+  margin-top: 0;
+  animation: fadein 4s;
 }
+
+/* @keyframes fadein{
+
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+
+@keyframes up{
+
+    from{
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    to{
+         transform: translateY(0);
+         opacity: 1;
+    }
+}
+ */
 
 span {
   background-color: #ffd369;
@@ -40,34 +77,87 @@ span {
 }
 
 .hero-content {
+  padding-top: 20px;
   display: flex;
   width: 50%;
+  animation: up 3s;
 }
+
 form {
   width: 100%;
 }
 .project-hero__input {
   padding: 5px;
-  width: 70%;
+  width: 60%;
   border-radius: 15px;
 }
 
+.project-hero__input:focus {
+  background-color: #ffd369;
+}
+
+::placeholder {
+  color: #393e46;
+  font-size: 18px;
+}
+
 .btn {
-  padding: 3px;
+  padding: 5px;
   font-size: 18px;
   border-radius: 10px;
 }
 
-.project-view {
-  height: 300px;
-  width: 350px;
-  background-color: green;
-  margin: 15px;
+.project-hero__btnAll {
+  background-color: #ffd369;
+  color: #222831;
+}
+
+.project-hero__angles {
+  margin-top: 30px;
+  font-size: 35px;
+  color: white;
+}
+
+.project-hero__angles--up{
+  color: #222831;
+  background-color:#ffd369 ;
+  padding: 15px;
+  border-radius: 30%;
+  position: fixed;
+  bottom: 0px;
+  right:0;
+  margin: 10px;
+
+}
+
+
+h2 {
   text-align: center;
 }
 
+.project-view {
+  height: 250px;
+  width: 280px;
+  background-color: #ffd269c9;
+  margin: 15px;
+  text-align: center;
+  box-shadow: 5px 5px 5px #393e46be;
+}
+
 .project-result {
+  height: 90vh;
+  padding: 0 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+
+}
+
+
+footer{
+  height: 15vh;
+  background-color: #222831;
+  color:#ffd269c9;
+  position: absolute;
+  bottom: 0;
 }
